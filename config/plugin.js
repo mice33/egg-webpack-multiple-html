@@ -7,3 +7,8 @@ exports.art = {
   enable: true,
   package: 'egg-view-art',
 };
+
+exports.assets = {
+  enable: true,
+  package: 'egg-view-assets',
+};

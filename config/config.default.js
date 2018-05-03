@@ -14,6 +14,7 @@ module.exports = appInfo => {
 
   config.view = {
     mapping: {
+      '.js': 'assets',
       '.html': 'art',
       defaultViewEngine: 'art',
       defaultExtension: '.html',
@@ -29,6 +30,13 @@ module.exports = appInfo => {
   config.cacheControl = {
     noCache: true,
     noStore: true
+  };
+
+  config.assets = {
+    devServer: {
+      command: 'easywebpack server dev',
+      port: 9008,
+    },
   };
 
   // config.webpack = {

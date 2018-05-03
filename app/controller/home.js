@@ -1,6 +1,7 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+const path = require('path');
 
 class HomeController extends Controller {
   async index() {
@@ -24,7 +25,12 @@ class HomeController extends Controller {
     console.log(data);
 
     // render a template, path relate to `app/view`
-    await ctx.render('index', data);
+    // await ctx.render('index', data);
+
+    await ctx.render('index.js', data, {
+      templatePath: path.join(this.app.config.baseDir, 'app/web/page/index.html'),
+      templateViewEngine: 'art',
+    });
   }
 }
 
